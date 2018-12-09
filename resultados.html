@@ -41,7 +41,9 @@
       var prof = alunos[c].idProfissional;
       var idade = alunos[c].idade;
       var nome = alunos[c].nome;
+      var nomeProf= "";
       //console.log(prof, idade, nome);
+
 
       var table = document.getElementById('tabelaResult');
       var row = table.insertRow(0);
@@ -54,7 +56,7 @@
 
       cell1.innerHTML = chaves
       cell2.innerHTML = nome
-      cell3.innerHTML = prof
+      cell3.innerHTML = nomeProf
       cell4.innerHTML = idade
       cell5.innerHTML = '<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Informações</button>'
 
@@ -68,7 +70,14 @@
       modalIdade.innerHTML = idade;
 
       var modalProf = document.getElementById('profModal');
-      modalProf.innerHTML = prof;
+      modalProf.innerHTML = nomeProf;
+
+firebase.database().ref('/Profissionais/' + prof).once('value').then(function(snapshot) {
+         var nomeProf = snapshot.val().nome;
+         cell3.innerHTML = nomeProf;
+         modalProf.innerHTML = nomeProf;
+});
+
     }
 
   }
