@@ -10,6 +10,23 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
     <link rel="stylesheet" href="assets/css/styles.min.css">
+    <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+
+     <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA23clfCWrLSD0BVFoXhyj1opi8ZcqaTtk",
+    authDomain: "teagames-3193c.firebaseapp.com",
+    databaseURL: "https://teagames-3193c.firebaseio.com",
+    projectId: "teagames-3193c",
+    storageBucket: "teagames-3193c.appspot.com",
+    messagingSenderId: "848455715190"
+  };
+  firebase.initializeApp(config);
+  database = firebase.database();
+    </script>
 </head>
 
 <body>
@@ -23,22 +40,16 @@
                         <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Home</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="#">Quem somos?</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="contatos.html">Contato</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="resultados.html">Resultados</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="downloads.html">Downloads</a></li>
                     </ul>
                     <form class="form-inline mr-auto" target="_self">
                         <div class="form-group"><label for="search-field"></label></div>
-                    </form><span class="navbar-text"> <a href="cadastrar.html" class="login">Cadastrar-se</a></span><a class="btn btn-light action-button" role="button" href="login.html" style="background-color:#41bfcd;">Login</a></div>
+                    </form><span class="navbar-text"><a class="btn btn-light action-button" role="button" href="login.html" style="background-color:#41bfcd;">Login</a></div>
     </div>
     </nav>
     </div>
-    <div class="login-clean">
-        <form method="post">
-            <h2 class="sr-only">Login Form</h2>
-            <div class="illustration"><i class="icon ion-android-person" style="color:rgb(3,2,2);"></i></div>
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Senha"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color:rgb(71,223,244);">Log In</button></div><a href="#" class="forgot">Esqueceu seu acesso ou senha?</a></form>
-    </div>
+            <div id="firebaseui-auth-container"></div>
+            <div id="loader">Loading...</div>
     <div class="footer-basic">
         <footer>
             <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
