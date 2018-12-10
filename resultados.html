@@ -15,6 +15,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
     <script src="p5.js"></script>
     <script src="p5.dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
     <script>
   // Initialize Firebase
   var config = {
@@ -134,11 +135,132 @@ firebase.database().ref('/Profissionais/' + prof).once('value').then(function(sn
                 </div>
             </div>
             <h5 style="margin-top: 6%"><strong>Resumo das atividades:</strong></h5>
-                <div>
-                    
 
-                </div>
+                <div class="container">
+  <h6>Jogo da Memória</h6>
+              
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Nível 1</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Nível 2</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Nível 3</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval=false>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <canvas id="myChart" style="width: 600px; height: 400px;"></canvas>
+    </div>
+    <div class="carousel-item">
+      <canvas id="myChartErros" style="width: 600px; height: 400px;"></canvas>
+    </div>
+    <div class="carousel-item">
+      <canvas id="myChartTempo" style="width: 600px; height: 400px;"></canvas>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval=false>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <canvas id="myChart2" style="width: 600px; height: 400px;"></canvas>
+    </div>
+    <div class="carousel-item">
+      <canvas id="myChartErros2" style="width: 600px; height: 400px;"></canvas>
+    </div>
+    <div class="carousel-item">
+      <canvas id="myChartTempo2" style="width: 600px; height: 400px;"></canvas>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+      
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval= false>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <canvas id="myChart3" style="width: 600px; height: 400px;"></canvas>
+    </div>
+    <div class="carousel-item">
+      <canvas id="myChartErros3" style="width: 600px; height: 400px;"></canvas>
+    </div>
+    <div class="carousel-item">
+      <canvas id="myChartTempo3" style="width: 600px; height: 400px;"></canvas>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+  </div>
+</div>    
+
         </div>
+
+
+<div class="container">
+  <h6>Jogo das sombras</h6>
+                  
+   
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab2" data-toggle="tab" href="#home2" role="tab" aria-controls="home2" aria-selected="true">Nível 1</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab2" data-toggle="tab" href="#profile2" role="tab" aria-controls="profile2" aria-selected="false">Nível 2</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab2" data-toggle="tab" href="#contact2" role="tab" aria-controls="contact2" aria-selected="false">Nível 3</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home2" role="tabpanel" aria-labelledby="home-tab2">
+      <canvas id="myChartTempoS" style="width: 600px; height: 400px;"></canvas>
+  </div>
+  <div class="tab-pane fade" id="profile2" role="tabpanel" aria-labelledby="profile-tab2">
+      <canvas id="myChartTempo2S" style="width: 600px; height: 400px;"></canvas>
+  </div>
+  <div class="tab-pane fade" id="contact2" role="tabpanel" aria-labelledby="contact-tab2">
+      <canvas id="myChartTempo3S" style="width: 600px; height: 400px;"></canvas>
+  </div>
+</div>
+ <script src="jquery-3.3.1.min.js"></script>    
+ <script src="consulta.js"></script>
+ <script src="consulta2.js"></script>
+
+</div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
         </div>
