@@ -26,12 +26,14 @@
     storageBucket: "teagames-3193c.appspot.com",
     messagingSenderId: "848455715190"
   };
+
+
   firebase.initializeApp(config);
 
-firebase.auth().onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(function(user) {
        if (user) {
 
-             break;
+             location.href.once='resultados.html';
 
 
        } else {
