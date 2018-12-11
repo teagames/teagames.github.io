@@ -28,6 +28,20 @@
   };
   firebase.initializeApp(config);
 
+firebase.auth().onAuthStateChanged(function(user) {
+       if (user) {
+
+             break;
+
+
+       } else {
+
+             // User is signed out.
+             location.href='login.html';
+
+      }
+});
+
   database = firebase.database();
 
   var ref = database.ref('Alunos');
@@ -105,23 +119,6 @@ firebase.database().ref('/Profissionais/' + prof).once('value').then(function(sn
 
 <body>
 
-<script>
-       firebase.auth().onAuthStateChanged(function(user) {
-       if (user) {
-
-             location.href='resultados.html';
-             
-             
-       } else {
-
-             // User is signed out.
-             location.href='login.html';
-
-      }
-});
-
-    </script>
-  
     <div></div>
     <div></div>
     <div class="features-boxed"></div>
