@@ -27,6 +27,7 @@
     messagingSenderId: "848455715190"
   };
   firebase.initializeApp(config);
+
   database = firebase.database();
 
   var ref = database.ref('Alunos');
@@ -86,6 +87,8 @@ firebase.database().ref('/Profissionais/' + prof).once('value').then(function(sn
     console.log('Error');
     console.log(err);
   }
+
+
     </script>
     <style>
 .carousel-control-prev-icon {
@@ -95,11 +98,30 @@ firebase.database().ref('/Profissionais/' + prof).once('value').then(function(sn
 .carousel-control-next-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#848484' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
 }
+
 </style>
 
 </head>
 
 <body>
+
+<script>
+       firebase.auth().onAuthStateChanged(function(user) {
+       if (user) {
+
+             location.href='resultados.html';
+             
+             
+       } else {
+
+             // User is signed out.
+             location.href='login.html';
+
+      }
+});
+
+    </script>
+  
     <div></div>
     <div></div>
     <div class="features-boxed"></div>
